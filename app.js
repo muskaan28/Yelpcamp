@@ -19,7 +19,17 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect("mongodb://localhost/yelp-camp", { useNewUrlParser: true });
+mongoose.connect(process.env.DATABASEURL, { useNewUrlParser: true });
+//mongoose.connect('mongodb+srv://muskaan28:Muskaan@1234@cluster0.bi1an.mongodb.net/<dbname>?retryWrites=true&w=majority',{
+//	useNewUrlParser:true,
+//	useCreateIndex:true
+// }).then(()=>{
+// 	console.log("connected to db")
+// }).catch(err=>{
+// 	console.log('ERROR:',err.message);
+// });
+
+
 mongoose.createConnection("mongodb://localhost/yelp-camp", { useNewUrlParser: true });
 mongoose.connect("mongodb://localhost/yelp-camp");
 
